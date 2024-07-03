@@ -2,8 +2,17 @@ const prompt = require("prompt-sync")();
 
 let opcao;
 let num1, num2;
+let repetir;
 
-let operacao = () => opcao
+let operacao = () => opcao;
+
+function mensagem(){
+    console.log(`Digite 1 para somar dois números
+    Digite 2 para diminuir dois números
+    Digite 3 para dividir
+    Digite 4 para multiplicar
+    Digite 5 para porcentagem`);
+}
 
 function chamarnumero() {
   while (1) {
@@ -31,11 +40,20 @@ function leropcao() {
       console.log("Não é um número.");
       continue;
     } else {
-      if(opcao == 1 || opcao == 2 || opcao == 3 || opcao == 4)
-        chamarnumero();
+      if (opcao == 1 || opcao == 2 || opcao == 3 || opcao == 4) chamarnumero();
       break;
     }
   }
+}
+
+function repetirprocesso() {
+  repetir = prompt("Você deseja encerrar o programa? (S/N)");
+  if (repetir == "S" || repetir == "s") {
+    process.exit();
+  } else if (repetir == "N" || repetir == "n") {
+    mensagem()
+    leropcao()
+  } else console.log("Inválido");
 }
 
 function somar() {
@@ -63,4 +81,14 @@ function porcentagem() {
   console.log(`Resultado da porcentagem: ${resultado}%`);
 }
 
-module.exports = {leropcao, somar, diminuir, dividir, porcentagem, operacao, multiplicar};
+module.exports = {
+  leropcao,
+  somar,
+  diminuir,
+  dividir,
+  porcentagem,
+  operacao,
+  multiplicar,
+  repetirprocesso,
+  mensagem,
+};

@@ -1,16 +1,12 @@
 const calculadora = require('./index');
 
-console.log(`Digite 1 para somar dois números
-Digite 2 para diminuir dois números
-Digite 3 para dividir
-Digite 4 para multiplicar
-Digite 5 para porcentagem`);
-
+calculadora.mensagem()
 while(1){
     calculadora.leropcao();   
     switch (calculadora.operacao()) {
         case 1:
             calculadora.somar();
+            calculadora.repetirprocesso()
             break;
         case 2:
             calculadora.diminuir();
