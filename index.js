@@ -6,12 +6,13 @@ let repetir;
 
 let operacao = () => opcao;
 
-function mensagem(){
-    console.log(`Digite 1 para somar dois números
-    Digite 2 para diminuir dois números
-    Digite 3 para dividir
-    Digite 4 para multiplicar
-    Digite 5 para porcentagem`);
+function mensagem() {
+  console.log(`Digite a operação desejada.
+    1. para somar dois números
+    2. para diminuir dois números
+    3. para dividir
+    4. para multiplicar
+    5. para porcentagem`);
 }
 
 function chamarnumero() {
@@ -40,21 +41,22 @@ function leropcao() {
       console.log("Não é um número.");
       continue;
     } else {
-      if (opcao == 1 || opcao == 2 || opcao == 3 || opcao == 4) chamarnumero();
+      if (opcao == 1 || opcao == 2 || opcao == 3 || opcao == 4 || opcao == 5)
+        chamarnumero();
       break;
     }
   }
 }
 
-function repetirprocesso() {
-  repetir = prompt("Você deseja encerrar o programa? (S/N)");
-  if (repetir == "S" || repetir == "s") {
-    process.exit();
-  } else if (repetir == "N" || repetir == "n") {
-    mensagem()
-    leropcao()
-  } else console.log("Inválido");
-}
+// function repetirprocesso() {
+//   repetir = prompt("Você deseja encerrar o programa? (S/N)");
+//   if (repetir == "S" || repetir == "s") {
+//     process.exit();
+//   } else if (repetir == "N" || repetir == "n") {
+//     mensagem();
+//     leropcao();
+//   } else console.log("Inválido");
+// }
 
 function somar() {
   const resultado = num1 + num2;
@@ -89,6 +91,5 @@ module.exports = {
   porcentagem,
   operacao,
   multiplicar,
-  repetirprocesso,
   mensagem,
 };
